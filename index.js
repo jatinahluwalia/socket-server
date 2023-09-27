@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 
 const server = createServer(app);
+server.listen(PORT, () => {
+  console.log(`Listening server at ${PORT}`);
+});
 
 app.get("/", (_req, res) => {
   return res.send("Working");
@@ -33,10 +36,6 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("Disconnected");
   });
-});
-
-server.listen(PORT, () => {
-  console.log(`Listening server at ${PORT}`);
 });
 
 export default server;
