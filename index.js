@@ -38,4 +38,4 @@ io.on("connection", (socket) => {
   });
 });
 
-export default server;
+module.exports = app;
